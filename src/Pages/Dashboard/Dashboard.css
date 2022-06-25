@@ -1,0 +1,36 @@
+.ant-layout-content {
+  background-color: white !important;
+}
+.ant-btn-primary {
+  background-color: green !important;
+  border-color: green;
+  border-radius: 5px;
+}
+.ant-btn-primary:hover {
+  background-color: rgba(0, 128, 0, 0.836) !important;
+}
+.ant-modal-footer .ant-btn {
+  border-radius: 5px !important;
+}
+.ant-modal-footer .ant-btn:hover {
+  background-color: #575bca !important;
+  color: #ffff;
+}
+.ant-modal-title {
+  color: #94a3b8 !important;
+  font-weight: 600 !important;
+}
+
+.ant-layout-sider-trigger {
+  max-width: 186px !important;
+}
+
+/* make header responsive */
+.sidebar-collapsed {
+  min-width: auto !important;
+  max-width: 80px !important;
+}
+
+.sidebar-expanded {
+  z-index: 10 !important;
+}
