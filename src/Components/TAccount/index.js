@@ -1,55 +1,16 @@
 import React, { useState } from "react";
 import { Select, Divider, Input, Typography, Space, InputNumber } from "antd";
 import { v4 as uuidv4 } from "uuid";
+import ChartOfAccounts from "./COA";
 import { PlusOutlined } from "@ant-design/icons";
 import EntryDr from "./component/entry";
 import "./style.css";
 import "antd/dist/antd.css";
 import { useAppDispatch, useAppState } from '../../Context/AppContext';
 
-const listAccountName = [
-  {
-    id: uuidv4(),
-    AccountName: "Cash - Operating Account",
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Cash - Payroll Account",
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Cash - Money Market Account",
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Cash - Petty Cash"
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Marketable Securities"
-  },
-  {
-    id: uuidv4(),
-    AccountName: "AR - Trade"
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Unbilled - Accounts Receivable"
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Unbilled - Retainage"
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Unbilled - Liquidated Balance"
-  },
-  {
-    id: uuidv4(),
-    AccountName: "Travel Advances"
-  }
-];
-
+const listAccountName = ChartOfAccounts
+  
+    
 const labelData = [
   // {
   //   id: uuidv4(),
@@ -243,7 +204,7 @@ const TAccount = ({ item, index }) => {
             )}
           >
             {items.map((item) => (
-              <Option key={item.AccountName} value={item.AccountName}>
+              <Option key={item.id} value={item.AccountName}>
                 {item.AccountName}
               </Option>
             ))}

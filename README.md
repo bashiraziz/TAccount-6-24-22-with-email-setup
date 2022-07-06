@@ -1,2 +1,2 @@
-# TAccounts
-This is an easy to use T accounts template for the use by the professional accountants and would be accountants(students)
+# TAccounts-ALPHAlogixs
+This repository is for the ALPHAlogixs to use for the development of the T accounts app.
