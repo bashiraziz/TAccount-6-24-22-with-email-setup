@@ -1,7 +1,8 @@
 import React from "react";
 import { Grid } from "antd";
-
-import Logo from "./../../Assects/accounting.png";
+import favicon512  from "../../Assets/android-chrome-512x512.png"
+import favicon192  from "../../Assets/android-chrome-192x192.png"
+import Logo from "./../../Assets/accounting.png";
 import "./Navbar.css";
 import "antd/dist/antd.css";
 
@@ -14,9 +15,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <img src={Logo} alt="" width="40px" />
+      <img src={favicon512} alt="" width="40px" />
       {
-        sm && <h2 style={{ fontSize: headingFontSize }}>T-ACCOUNT RULES!!!</h2>
+        sm && <h2 style={{ fontSize: headingFontSize }}>ACCOUNT RULES!!!</h2>
       }
     </div>
   );
