@@ -17,7 +17,7 @@ const { SubMenu } = Menu;
 
 export const menuItems = [
   {
-    label: "TAccounts",
+    label: "T-Accounts",
     href: "/",
     id: "tAccounts",
     icon: <AccountBookOutlined />
