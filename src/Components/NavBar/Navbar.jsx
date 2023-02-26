@@ -1,8 +1,8 @@
 import React from "react";
 import { Grid } from "antd";
 import favicon512  from "../../Assets/android-chrome-512x512.png"
-import favicon192  from "../../Assets/android-chrome-192x192.png"
-import Logo from "./../../Assets/accounting.png";
+//import favicon192  from "../../Assets/android-chrome-192x192.png"
+//import Logo from "./../../Assets/accounting.png";
 import "./Navbar.css";
 import "antd/dist/antd.css";
 
