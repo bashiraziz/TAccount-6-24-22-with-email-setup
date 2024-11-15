@@ -1,65 +1,77 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu } from "antd";
 import {
-  SkinOutlined,
-  MenuOutlined,
-  SecurityScanOutlined,
   AccountBookOutlined,
   DollarCircleOutlined,
-  CommentOutlined
+  CommentOutlined,
 } from "@ant-design/icons";
 
 import "./Sidebar.css";
 import "antd/dist/antd.css";
-
-const { SubMenu } = Menu;
 
 export const menuItems = [
   {
     label: "T-Accounts",
     href: "/",
     id: "tAccounts",
-    icon: <AccountBookOutlined />
+    icon: <AccountBookOutlined />,
+    introData: {
+      title: "T-Accounts",
+      description: "Manage your ledger entries and account transactions here.",
+      position: "right",
+    },
   },
   {
     label: "Trial Balance",
     href: "/trial-balance",
     id: "trialBalance",
-    icon: <DollarCircleOutlined />
+    icon: <DollarCircleOutlined />,
+    introData: {
+      title: "Trial Balance",
+      description: "View and verify your account balances in one place.",
+      position: "right",
+    },
   },
   {
     label: "Feedback",
     href: "/feedback",
     id: "feedback",
-    icon: <CommentOutlined />
-  }
+    icon: <CommentOutlined />,
+    introData: {
+      title: "Feedback",
+      description: "Share your thoughts and suggestions with us.",
+      position: "right",
+    },
+  },
 ];
 
 const Sidebar = () => {
-  const [current, setCurrent] = useState('');
+  const [current, setCurrent] = useState("");
 
   return (
     <div className="side-bar">
       <Menu
         theme="dark"
         mode="inline"
-        onClick={e => setCurrent(e.key)}
+        onClick={(e) => setCurrent(e.key)}
         selectedKeys={[current]}
       >
-        <div className="logo">
-          {/* <AccountBookOutlined style={{fontSize:'35px'}}/> */}
-        </div>
-        {/* <p className="side-heading">Pages</p> */}
-        {/* <Menu.Item key="7" icon={<SecurityScanOutlined />}> */}
-        {/* <Menu.Item key="5" icon={<MenuOutlined />}> */}
+        <div className="logo" />
         {menuItems.map((menuItem, i) => {
           const classes = [];
           const isActive = menuItem.href === window.location.pathname;
-          isActive && classes.push('active');
+          isActive && classes.push("active");
 
           return (
-            <Menu.Item key={String(i)} className={classes.join(' ')}>
+            <Menu.Item
+              key={String(i)}
+              className={`${classes.join(" ")} intro-${menuItem.id}`}
+              id={`sidebar-${menuItem.id}`}
+              data-intro={menuItem.introData.description}
+              data-title={menuItem.introData.title}
+              data-position={menuItem.introData.position}
+            >
               <Link to={menuItem.href}>
                 {menuItem.icon}
                 <span className="nav-text">{menuItem.label}</span>
@@ -67,12 +79,6 @@ const Sidebar = () => {
             </Menu.Item>
           );
         })}
-        {/* <Menu.Item key="4" icon={<SkinOutlined />}>
-          <Link to="/profit-and-loss-account">Profit and Loss</Link>
-        </Menu.Item>
-        <Menu.Item key="6" icon={<SecurityScanOutlined />}>
-          <Link to="/balance-sheet">Balance Sheet</Link>
-        </Menu.Item> */}
       </Menu>
     </div>
   );
